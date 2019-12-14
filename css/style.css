@@ -31,6 +31,10 @@ h1 {
   display: inline;
 }
 
+h1 span {
+  display: inline-block;
+}
+
 h2 {
   font-weight: bold;
   font-size: 24px;
@@ -97,6 +101,8 @@ a {
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+  width: 100%;
+  display: block;
 }
 
 #skills-h3 {
@@ -130,6 +136,11 @@ a {
 /* TODO: Replace with image later */
 #header {
   background-color: #484848;
+}
+
+.flex-item {
+  display: inline-block;
+  padding-right: 2em;
 }
 
 .flex-box {
@@ -174,6 +185,7 @@ span {
 #lets-connect {
   text-align: center;
 }
+
 
 /* Media queries to handle various device widths */
 
