@@ -71,7 +71,7 @@ var projects = {
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget finibus neque, nec rhoncus lectus. Duis fermentum, dolor sed ornare gravida, magna sem maximus justo, et luctus est eros dapibus nunc. Proin tristique semper orci id placerat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin a auctor odio, sit amet rutrum diam. In finibus, ipsum elementum consectetur auctor, lorem diam vestibulum nibh, interdum vulputate nibh sem id mauris. Suspendisse quis leo ut ante volutpat rhoncus nec eu enim. Pellentesque tempor vitae massa non posuere. Cras molestie justo nec sollicitudin pulvinar. Cras convallis leo ac nunc euismod sodales.",
             images: [
                 {
-                image: "images/yum.png",
+                image: "images/101try.png",
                 }
             ]
         }
@@ -81,11 +81,11 @@ var projects = {
 var education = {
     schools: [
         {
-        name: "University of Alberta",
-        location: "Edmonton, Alberta",
-        degree: "Bachelor of Arts",
-        specialization: "Film Studies, minor in Comparative Literature",
-        dates: "September 2015 - June 2019",
+            name: "University of Alberta",
+            location: "Edmonton, Alberta",
+            degree: "Bachelor of Arts",
+            specialization: "Film Studies, Minor: Comparative Literature",
+            dates: "September 2015 - June 2019",
         }
     ]
     ,
@@ -98,6 +98,42 @@ var education = {
         }
     ]
 }
+
+function displayEducation() {
+    for (school in education.schools) {
+        $("#education").append(HTMLschoolStart);
+        //concatenate name and degree
+        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        var formattedSchoolDeg = formattedSchoolName + formattedSchoolDegree ;
+        $(".education-entry:last").append(formattedSchoolDeg);
+        //dates
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        $(".education-entry:last").append(formattedSchoolDates);
+        //location and major
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].specialization);
+        $(".education-entry:last").append(formattedSchoolLocation)
+        $(".education-entry:last").append(formattedSchoolMajor);
+    }
+    // ONLINE COURSES -- idk why its on top of online classes lol
+    for (course in education.OnlineCourses) {
+        $("#education").append(HTMLonlineClasses); // ??? i think
+        //concatenate title and school
+        var formattedOCTitle = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].title);
+        var formattedOCSchool = HTMLonlineSchool.replace("%data%",education.OnlineCourses[course].school);
+        var formattedOCName = formattedOCTitle + formattedOCSchool ;
+        $(".education-entry:last").append(formattedOCName);
+        // dates
+        var formattedOCDates = HTMLonlineDates.replace("%data%", education.OnlineCourses[course].dates);
+        $(".education-entry:last").append(formattedOCDates);
+        //url
+        var formattedOCURL = HTMLonlineURL.replace("%data%", education.OnlineCourses[course].url);
+        $(".education-entry:last").append(formattedOCURL);
+    }
+}
+
+displayEducation(); 
 
 function displayWork() {
     for (job in work.jobs) {
@@ -148,14 +184,16 @@ projects.display = function() {
         var formattedDescript = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         $(".project-entry:last").append(formattedDescript)
 
-        //appending images
+    //appending images
         // dont know why the image is coming up undefined lol 
-        if (projects.projects[project].images.length > 0) {
-            for (image in projects.projects[project].images){
-                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-                $(".project-entry:last").append(formattedImage);
-            }
-        }
+        // if (projects.projects[project].images.length > 0) {
+        //     for (image in projects.projects[project].images){
+        //         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        //         $(".project-entry:last").append(formattedImage);
+        //     }
+        // }
+    var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+    $(".project-entry:last").append(formattedImage);
     }
 }
 
