@@ -112,20 +112,20 @@ function displayEducation() {
         $(".education-entry:last").append(formattedSchoolLocation)
         $(".education-entry:last").append(formattedSchoolMajor);
     }
-    // ONLINE COURSES -- idk why its on top of online classes lol
+    // ONLINE COURSES 
     for (course in education.OnlineCourses) {
-        $("#education").append(HTMLonlineClasses); // ??? i think
+    $(".education-entry").append(HTMLonlineClasses); 
         //concatenate title and school
         var formattedOCTitle = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].title);
         var formattedOCSchool = HTMLonlineSchool.replace("%data%",education.OnlineCourses[course].school);
         var formattedOCName = formattedOCTitle + formattedOCSchool ;
-        $(".education-entry:last").append(formattedOCName);
+    $(".education-entry").append(formattedOCName);
         // dates
         var formattedOCDates = HTMLonlineDates.replace("%data%", education.OnlineCourses[course].dates);
-        $(".education-entry:last").append(formattedOCDates);
+     $(".education-entry").append(formattedOCDates);
         //url
         var formattedOCURL = HTMLonlineURL.replace("%data%", education.OnlineCourses[course].url);
-        $(".education-entry:last").append(formattedOCURL);
+    $(".education-entry:last").append(formattedOCURL);
     }
 }
 
