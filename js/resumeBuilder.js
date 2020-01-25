@@ -69,11 +69,7 @@ var projects = {
             title: "Front-end Nanodegree Resume",
             dates: "shrug - present",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget finibus neque, nec rhoncus lectus. Duis fermentum, dolor sed ornare gravida, magna sem maximus justo, et luctus est eros dapibus nunc. Proin tristique semper orci id placerat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin a auctor odio, sit amet rutrum diam. In finibus, ipsum elementum consectetur auctor, lorem diam vestibulum nibh, interdum vulputate nibh sem id mauris. Suspendisse quis leo ut ante volutpat rhoncus nec eu enim. Pellentesque tempor vitae massa non posuere. Cras molestie justo nec sollicitudin pulvinar. Cras convallis leo ac nunc euismod sodales.",
-            images: [
-                {
-                image: "images/101try.png",
-                }
-            ]
+            images: "images/101try.png",
         }
     ]
 }
